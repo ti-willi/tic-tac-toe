@@ -1,8 +1,13 @@
 package application;
 
 import game.GamePiece;
+import game.GamePlay;
 
 public class UI {
+	
+	public static void printGame(GamePlay gamePlay) {
+		printBoard(gamePlay.getPieces());
+	}
 	
 	public static void printBoard(GamePiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {

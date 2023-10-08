@@ -8,7 +8,8 @@ public class Program {
 		
 		GamePlay gamePlay = new GamePlay();
 		
-		UI.printBoard(gamePlay.getPieces());
+		UI.printGame(gamePlay);
+	
 		
 	}
 
