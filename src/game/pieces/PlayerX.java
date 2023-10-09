@@ -1,14 +1,12 @@
 package game.pieces;
 
 import boardgame.Board;
-import game.Color;
 import game.GamePiece;
 
 public class PlayerX extends GamePiece {
 
-	public PlayerX(Board board, Color color) {
-		super(board, color);
-		color = Color.WHITE;
+	public PlayerX(Board board) {
+		super(board);
 	}
 	
 	@Override

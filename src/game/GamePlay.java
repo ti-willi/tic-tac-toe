@@ -1,18 +1,24 @@
 package game;
 
 import boardgame.Board;
+import boardgame.Piece;
+import boardgame.Position;
 import game.pieces.PlayerO;
 import game.pieces.PlayerX;
 
 public class GamePlay {
 	
 	private Board board;
-	
-	 
+	private int turn;
 	
 	public GamePlay() {
 		board = new Board(3, 3);
-		initialSetup();
+		turn = 1;
+		
+	}
+	
+	public int getTurn() {
+		return turn;
 	}
 	
 	public GamePiece[][] getPieces() {
@@ -25,14 +31,30 @@ public class GamePlay {
 		return mat;		
 	}
 	
-	private void placeNewPiece(char column, int row, GamePiece piece) {
-		board.placePiece(piece, new GamePosition(column, row).toPosition());
+	public GamePiece performGameMove(GamePosition targetPosition) {
+		Position target = targetPosition.toPosition();
+		Piece targetPiece = makeMove(target);
+		return (GamePiece) targetPiece;
 	}
 	
-	public void initialSetup() {
-		placeNewPiece('b', 2, new PlayerX(board, Color.WHITE));
-		placeNewPiece('a', 1, new PlayerX(board, Color.WHITE));
-		placeNewPiece('b', 3, new PlayerO(board, Color.YELLOW));
+	
+	private Piece makeMove(Position target) {
+		GamePiece p = new PlayerX(board);
+		
+		if (turn % 2 == 0) {
+			p = new PlayerO(board);
+		}
+		
+		board.placePiece(p, target);
+		nextTurn();
+		
+		return p;
 	}
+	
+	private void nextTurn() {
+		turn++;
+	}
+	
+	
 	
 }

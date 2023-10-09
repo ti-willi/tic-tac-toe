@@ -3,17 +3,10 @@ package game;
 import boardgame.Board;
 import boardgame.Piece;
 
-public class GamePiece extends Piece {
-	
-    private Color color;
+public class GamePiece extends Piece {	
 
-	public GamePiece(Board board, Color color) {
-		super(board);
-		this.color = color;
-	}
-	
-	public Color getColor() {
-		return color;
+	public GamePiece(Board board) {
+		super(board);	
 	}
 	
 }

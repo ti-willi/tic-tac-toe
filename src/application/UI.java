@@ -1,9 +1,27 @@
 package application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import game.GamePiece;
 import game.GamePlay;
+import game.GamePosition;
 
 public class UI {
+	
+	public static GamePosition readGamePosition(Scanner sc) {
+		try {
+			
+			String s = sc.nextLine().toLowerCase();
+			char column = s.charAt(0);
+			int row = Integer.parseInt(s.substring(1));
+			return new GamePosition(column, row);
+			
+		}
+		catch (RuntimeException e) {
+			throw new InputMismatchException("Error reading GamePosition. Valid values are from a1 to c3.");
+		}
+	}
 	
 	public static void printGame(GamePlay gamePlay) {
 		printBoard(gamePlay.getPieces());
