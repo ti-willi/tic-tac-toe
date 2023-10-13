@@ -23,6 +23,8 @@ public class GamePosition {
 	protected Position toPosition() {
 		return new Position(3 - row, column - 'a');
 	}
+	
+	
 
 	
 	

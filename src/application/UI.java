@@ -3,6 +3,7 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import game.Color;
 import game.GamePiece;
 import game.GamePlay;
 import game.GamePosition;
@@ -25,6 +26,14 @@ public class UI {
 	
 	public static void printGame(GamePlay gamePlay) {
 		printBoard(gamePlay.getPieces());
+		
+		if (gamePlay.getWinner()) {
+			String currentPlayerColor = gamePlay.getCurrentPlayer() == Color.WHITE ? "X" : "O";
+			System.out.println("The winner is player " + currentPlayerColor);
+		}
+		if (gamePlay.getTurn() > 9) {
+			System.out.println("There is no winner");
+		}
 	}
 	
 	public static void printBoard(GamePiece[][] pieces) {
