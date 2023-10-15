@@ -24,10 +24,4 @@ public class GamePosition {
 		return new Position(3 - row, column - 'a');
 	}
 	
-	
-
-	
-	
-	
-
 }

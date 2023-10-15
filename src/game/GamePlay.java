@@ -12,22 +12,21 @@ public class GamePlay {
 	
 	private Board board;
 	private int turn;
-	private Color currentPlayer;
+	private String currentPlayer;
 	private boolean winner;
 
-	
 	List<Piece> piecesOnTheBoard = new ArrayList<>();
 	
 	public GamePlay() {
 		board = new Board(3, 3);
-		turn = 1;	
+		turn = 1;
 	}
 	
 	public int getTurn() {
 		return turn;
 	}
 	
-	public Color getCurrentPlayer() {
+	public String getCurrentPlayer() {
 		return currentPlayer;
 	}
 	
@@ -35,16 +34,13 @@ public class GamePlay {
 		return winner;
 	}
 	
-	
-	
 	public List<Piece> getPiecesOnTheBoard() {
 		return piecesOnTheBoard;
 	}
 
-	
-
 	public GamePiece[][] getPieces() {
 		GamePiece[][] mat = new GamePiece[board.getRows()][board.getColumns()];
+		
 		for (int i = 0; i < board.getRows(); i++) {
 			for (int j = 0; j < board.getColumns(); j++) {
 				mat[i][j] = (GamePiece) board.piece(i, j);
@@ -55,30 +51,23 @@ public class GamePlay {
 	
 	public GamePiece performGameMove(GamePosition targetPosition) {
 		Position target = targetPosition.toPosition();
-		
 		Piece targetPiece = makeMove(target);
-		checkWinner();
 		nextTurn();
-		System.out.println();
-		System.out.println();
+		checkWinner();
+		
 		return (GamePiece) targetPiece;
-		
-		
-		
 	}
 	
 	private Piece makeMove(Position target) {
-		GamePiece p = new Player(board, Color.WHITE);
+		GamePiece p = new Player(board, PieceName.X);
 		
 		if(turn % 2 == 0) {
-			p = new Player(board, Color.YELLOW);
+			p = new Player(board, PieceName.O);
 		}
-		
 		
 		board.placePiece(p, target);
 		piecesOnTheBoard.add(p);
-		currentPlayer = p.getColor();
-		
+		currentPlayer = p.toString();
 		
 		return p;
 	}

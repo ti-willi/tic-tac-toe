@@ -16,16 +16,13 @@ public class Program {
 		
 		GamePlay gamePlay = new GamePlay();
 		
-		while(!gamePlay.getWinner()) {
+		while(!gamePlay.getWinner() && gamePlay.getTurn() < 10) {
 			try {
-				
+				UI.clearScreen();
 				UI.printGame(gamePlay);
 				
-				System.out.print("Position: ");
 				GamePosition target = UI.readGamePosition(sc);
-				
 				gamePlay.performGameMove(target);
-				
 			}
 			catch (GameException e) {
 				System.out.println(e.getMessage());
@@ -41,8 +38,8 @@ public class Program {
 			}
 		}
 		
+		UI.clearScreen();
 		UI.printGame(gamePlay);
-		
 	}
 
 }

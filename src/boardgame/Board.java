@@ -66,5 +66,4 @@ public class Board {
 		return positionExists(position.getRow(), position.getColumn());
 	}
 	
-	
 }

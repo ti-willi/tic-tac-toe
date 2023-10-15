@@ -1,18 +1,18 @@
 package game.pieces;
 
 import boardgame.Board;
-import game.Color;
+import game.PieceName;
 import game.GamePiece;
 
 public class Player extends GamePiece {
 
-	public Player(Board board, Color color) {
-		super(board, color);
+	public Player(Board board, PieceName pieceName) {
+		super(board, pieceName);
 	}
 	
 	@Override
 	public String toString() {
-		if (getColor() == Color.WHITE) {
+		if (getPieceName() == PieceName.X) {
 			return "X";
 		}
 		else {

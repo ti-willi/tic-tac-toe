@@ -7,20 +7,20 @@ import boardgame.Piece;
 
 public class GamePiece extends Piece {	
 	
-	private Color color;
+	private PieceName pieceName;
 
-	public GamePiece(Board board, Color color) {
+	public GamePiece(Board board, PieceName pieceName) {
 		super(board);	
-		this.color = color;
+		this.pieceName = pieceName;
 	}
 	
-	public Color getColor() {
-		return color;
+	public PieceName getPieceName() {
+		return pieceName;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(color);
+		return Objects.hash(pieceName);
 	}
 
 	@Override
@@ -32,9 +32,7 @@ public class GamePiece extends Piece {
 		if (getClass() != obj.getClass())
 			return false;
 		GamePiece other = (GamePiece) obj;
-		return color == other.color;
+		return pieceName == other.pieceName;
 	}
-
-	
 
 }
