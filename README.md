@@ -2,8 +2,7 @@
 
 >## Sobre o projeto
 
-A aplicação consiste em um simples jogo da velha, podendo ser rodado no terminal. O objetivo do projeto foi para ter um maior conhecimento em POO e lógica de programação, trabalhando
-com relacionamento entre classes, delegação de responsabilidade, tratamento de exceções de forma personalizada, vetores, matrizes e por fim inserindo lógica de vencedor.
+A aplicação consiste em um simples jogo da velha desenvolvido na linguagem Java, podendo ser rodado no terminal. O objetivo do projeto foi para ter um maior conhecimento em POO e lógica de programação, trabalhando com relacionamento entre classes, delegação de responsabilidade, tratamento de exceções de forma personalizada, vetores, matrizes e por fim inserindo lógica de vencedor.
 
 >## Sobre o jogo
 
@@ -22,5 +21,16 @@ com relacionamento entre classes, delegação de responsabilidade, tratamento de
 - Se não houver vencedor, a partida é encerrada exibindo uma mensagem na tela que não houve vencedor
 
   ![nowinner](https://github.com/ti-willi/assets/blob/main/tic-tac-toe/no%20winner.png)
+
+>## Como executar
+
+`Pré requisitos: Java 17 / Intelij ou Eclipse`
+
+- Clonar o repositório
+```
+git@github.com:ti-willi/tic-tac-toe.git
+```
+
+- Abra na sua IDE de preferência (Intelij ou Eclipse) e execute o projeto
 
 
