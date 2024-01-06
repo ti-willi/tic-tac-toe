@@ -24,7 +24,7 @@ A aplicação consiste em um simples jogo da velha desenvolvido na linguagem Jav
 
 >## Como executar
 
-`Pré requisitos: Java 17`
+`Pré requisitos: Java 17+`
 
 - Clonar o repositório
 ```
