@@ -24,13 +24,13 @@ A aplicação consiste em um simples jogo da velha desenvolvido na linguagem Jav
 
 >## Como executar
 
-`Pré requisitos: Java 17 / Intelij ou Eclipse`
+`Pré requisitos: Java 17`
 
 - Clonar o repositório
 ```
 git@github.com:ti-willi/tic-tac-toe.git
 ```
 
-- Abra na sua IDE de preferência (Intelij ou Eclipse) e execute o projeto
+- Abra na sua IDE e execute o projeto
 
 
